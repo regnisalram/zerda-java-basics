@@ -106,15 +106,42 @@ class TestApple {
 Are the tests passing? Detail your answer! [2p] Fix the situation! [2p]
 
 #### Explain what you did, and answer the questions here:
-
+Yes, the tests are passing:
+```testAdd()```: ```Apple.add()``` always returns 5, no matter what.
+```testMax()```: ```Apple.max_of_three()``` in this case jumps through the if (since 3 isn't bigger than 4), and returns 5.
+It should be
+```add(int a, int ) {
+	return a + b
+	}```
+and
+``` max_of_three(int a, int b, inc c) {
+	if (a > b) {
+		if (a > c) {
+			return a
+		} else if (c > a) {
+			return c
+		}
+	} else if (a < b) {
+		if (c > b) {
+			return c
+		} else if (c < b) {
+			return b
+		}
+	}```
+I'm not gonna finish this cause I'm running out of time, but the point is this wasn't actually checking which one was the biggest of the three numbers and that's what it should do and still return the int 5 at the end as the test says.
+		
 
 ## 4. Question time! (~20 mins) [6p]
 
 ### Where the abstract class is useful? [2p]
 #### Your answer:
+We use abstract classes when we don't want to instantiate and Object from the abstract class but want to be able to write methods for the classes extended from it at the same time. It's useful when several classes have the same or similar methods, so we don't have to write them over and over again. (For example: Animal abstract class that has a feed method and different kinds of Animals (Cat, Dog etc) that all eat.)
 
 ### Describe a method! Show the necessary parts and how are them called! [2p]
 #### Your answer:
+A method is a block of code that changes something else in the code.
+A method has a modifier (which is public by default if not specified), a return type (that can be void if it doesn't return anything), a name, parentheses (that might include parameters, but not necessarily), and a body between {} that has the code to be executed and a return statement it a return type was specified.
 
 ### What is the constructor? When it is used? [2p]
 #### Your answer:
+A constructor is a method that gets executed first and every time an Object is created. It is used when a new instantiation of a Class is created: ``` new Dog()``` for example. It can have zero or more parameters. There's always a default constructor in a Class with zero parameters unless one with parameters is defined so the Object can always get created.
