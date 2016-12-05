@@ -21,7 +21,7 @@ public class BlackJack extends JPanel implements ActionListener {
         });
     }
 
-    void BlackJack () {
+    BlackJack() {
 
         user = new JLabel("User played: ");
         this.add(user);
@@ -38,12 +38,18 @@ public class BlackJack extends JPanel implements ActionListener {
         this.add(reset);
 
         this.setVisible(true);
+
+        newGame();
+    }
+
+    void newGame() {
+        new Deck();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(reset)) {
-
+            newGame();
         } else if (e.getSource().equals(draw)) {
 
         }

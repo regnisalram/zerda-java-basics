@@ -15,6 +15,10 @@ public class Deck {
     String[] colors = {"treff", "karo", "kor", "pikk"};
     int[] values = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 
+    Deck() {
+        createDeck();
+    }
+
     public ArrayList<Card> createDeck() {
         cards = new ArrayList<>();
 

@@ -18,7 +18,15 @@ public class Player {
         return sum;
     }
 
-//    ArrayList<Card> addCardToPlayedCards() {
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", played=" + played +
+                '}';
+    }
+
+    //    ArrayList<Card> addCardToPlayedCards() {
 //        played.add(new Card());
 //    }
 }
