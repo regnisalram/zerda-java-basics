@@ -10,7 +10,9 @@ import java.awt.event.ActionListener;
 public class BlackJack extends JPanel implements ActionListener {
 
     JButton draw, reset;
-    JLabel user, house;
+    JLabel userLabel, houseLabel;
+    Player player, house;
+    Deck deck;
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
@@ -23,11 +25,11 @@ public class BlackJack extends JPanel implements ActionListener {
 
     BlackJack() {
 
-        user = new JLabel("User played: ");
-        this.add(user);
+        userLabel = new JLabel("User played: ");
+        this.add(userLabel);
 
-        house = new JLabel("House played: ");
-        this.add(house);
+        houseLabel = new JLabel("House played: ");
+        this.add(houseLabel);
 
         draw = new JButton("Draw a card");
         draw.addActionListener(this);
@@ -43,7 +45,9 @@ public class BlackJack extends JPanel implements ActionListener {
     }
 
     void newGame() {
-        new Deck();
+        deck = new Deck();
+        player = new Player("Player");
+        house = new Player("House");
     }
 
     @Override
@@ -51,7 +55,8 @@ public class BlackJack extends JPanel implements ActionListener {
         if (e.getSource().equals(reset)) {
             newGame();
         } else if (e.getSource().equals(draw)) {
-
+            deck.drawACard();
+//            userLabel.setText(userLabel + drawnCard ); something like this should happen
         }
     }
 }

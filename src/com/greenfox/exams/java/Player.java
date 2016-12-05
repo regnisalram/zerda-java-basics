@@ -9,6 +9,10 @@ public class Player {
     String name;
     ArrayList<Card> played;
 
+    Player(String name) {
+        this.name = name;
+    }
+
     int getValueOfPlayedCards() {
         played = new ArrayList<>();
         int sum = 0;
